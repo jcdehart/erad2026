@@ -503,8 +503,8 @@ for i, (idx, row) in enumerate(df_match.iterrows()):
     angles = np.deg2rad(np.arange(0, 360, 5))
     rays = np.array(rays, dtype=float)
 
-    ray_x = rays * np.cos(angles)
-    ray_y = rays * np.sin(angles)
+    ray_x = rays * np.sin(angles)
+    ray_y = rays * np.cos(angles)
     lat_vertices = lat_centroid + ray_y / 111
     lon_vertices = lon_centroid + ray_x / (111 * np.cos(np.deg2rad(lat_centroid)))
     polygon_points = list(zip(lon_vertices, lat_vertices))
